@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--Pop up edit name for edit username-->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/purple_100">
+
+    <!--EDIT PROFILE text-->
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30sp"
+        android:fontFamily="@font/impact"
+        android:text="EDIT PROFILE"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="40sp"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <!--NEW NAME text-->
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20sp"
+        android:fontFamily="@font/impact"
+        android:text="NEW NAME"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <!--input new username-->
+
+    <EditText
+        android:id="@+id/new_name_edittext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10sp"
+        android:layout_marginTop="5sp"
+        android:layout_marginRight="10sp"
+        android:background="@drawable/custom_input"
+        android:fontFamily="@font/impact"
+        android:inputType="text"
+        android:lines="1"
+        android:maxLines="1"
+        android:padding="5sp"
+        android:singleLine="true"
+        android:text=""
+        android:textAlignment="center"
+        android:textColor="@color/purple_100"
+        android:textSize="24sp"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <TextView
+        android:id="@+id/new_name_errorText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="208dp"
+        android:layout_marginEnd="40dp"
+        android:fontFamily="@font/impact"
+        android:text=""
+        android:textColor="#F88379"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50sp"
+        android:layout_marginBottom="40sp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/new_name_edittext"
+        app:layout_constraintVertical_bias="0.0">
+
+        <!--cancel button-->
+        <Button
+            android:id="@+id/cancel_popup_btn"
+            android:layout_width="170sp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/custom_button3"
+            android:fontFamily="@font/impact"
+            android:text="CANCEL"
+            android:textColor="@color/white"
+            android:textSize="32sp" />
+
+        <!--confirm button-->
+        <Button
+            android:id="@+id/confirm_popup_btn"
+            android:layout_width="170sp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10sp"
+            android:background="@drawable/custom_button"
+            android:fontFamily="@font/impact"
+            android:text="CONFIRM"
+            android:textColor="@color/white"
+            android:textSize="32sp" />
+
+
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="20dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--Account page for signing in-->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AccountActivity"
+    android:background="@color/purple_100">
+
+    <!--back button-->
+    <ImageButton
+        android:id="@+id/backward_btn"
+        android:layout_width="50sp"
+        android:layout_height="50sp"
+        android:background="@color/purple_100"
+        android:adjustViewBounds="true"
+        android:scaleType="centerInside"
+        android:layout_marginTop="10sp"
+        android:layout_marginLeft="10sp"
+        android:src="@mipmap/ic_backward_foreground"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints"></ImageButton>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!--ACCOUNT text-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="40sp"
+            android:text="ACCOUNT"
+            android:textColor="@color/white"
+            android:fontFamily="@font/impact"
+            android:textSize="40sp"
+            android:layout_gravity="center"
+            >
+        </TextView>
+
+        <!--login button-->
+        <Button
+            android:id="@+id/login_btn"
+            android:layout_width="250sp"
+            android:layout_height="70sp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="40sp"
+            android:background="@drawable/custom_button"
+            android:fontFamily="@font/impact"
+            android:text="LOGIN"
+            android:textSize="32sp"
+            android:textColor="@color/white"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteX="110dp" />
+
+        <!--register button-->
+        <Button
+            android:id="@+id/register_btn"
+            android:layout_width="250sp"
+            android:layout_height="70sp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="40sp"
+            android:background="@drawable/custom_button"
+            android:fontFamily="@font/impact"
+            android:text="REGISTER"
+            android:textSize="32sp"
+            android:textColor="@color/white"
+            app:layout_constraintTop_toBottomOf="@+id/easy_btn"
+            tools:layout_editor_absoluteX="16dp" />
+
+    </LinearLayout>
+
+    <!--button bar-->
+    <GridLayout
+        android:id="@+id/GridLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="0sp"
+        android:background="@color/brown_100"
+        android:columnCount="3"
+        android:padding="0sp"
+        android:rowCount="1"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <!--scoreboard button-->
+        <ImageButton
+            android:id="@+id/scoreboard_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="fill"
+            android:background="@color/brown_100"
+            android:src="@mipmap/ic_scoreboard_foreground" />
+
+        <!--profile button-->
+        <ImageButton
+            android:id="@+id/profile_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="fill"
+            android:background="@color/brown_200"
+            android:src="@mipmap/ic_profile_foreground" />
+
+        <!--setting button-->
+        <ImageButton
+            android:id="@+id/setting_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="fill"
+            android:background="@color/brown_100"
+            android:src="@mipmap/ic_setting_foreground" />
+
+    </GridLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

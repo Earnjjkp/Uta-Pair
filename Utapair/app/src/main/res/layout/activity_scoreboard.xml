@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--Scoreboard page shows the ranking of all players-->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ScoreboardActivity"
+    android:background="@color/purple_100">
+
+    <!--back button-->
+    <ImageButton
+        android:id="@+id/home_btn"
+        android:layout_width="70sp"
+        android:layout_height="70sp"
+        android:background="@color/purple_100"
+        android:adjustViewBounds="true"
+        android:scaleType="centerInside"
+        android:layout_marginTop="5sp"
+        android:layout_marginLeft="5sp"
+        android:src="@mipmap/ic_home"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints"></ImageButton>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginBottom="80sp">
+
+        <!--SCOREBOARD text-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20sp"
+            android:text="SCOREBOARD"
+            android:textColor="@color/white"
+            android:fontFamily="@font/impact"
+            android:textSize="40sp"
+            android:layout_gravity="center"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <!--LEVEL text-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50sp"
+                android:text="LEVEL"
+                android:textColor="@color/white"
+                android:fontFamily="@font/impact"
+                android:textSize="24sp" />
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent" />
+
+            <Spinner
+                android:id="@+id/level_spinner"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:paddingLeft="10sp"
+                android:paddingRight="10sp"
+                android:layout_marginRight="50sp"
+                android:textAlignment="center"
+                android:background="@drawable/custom_spinner"
+                android:fontFamily="@font/impact"
+                android:textSize="24sp"
+                 />
+
+        </LinearLayout>
+
+        <!--checkbox for mode blind-->
+        <CheckBox android:id="@+id/blind_mode_checkbox"
+            android:buttonTint="@color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50sp"
+            android:layout_marginBottom="20sp"
+            android:fontFamily="@font/impact"
+            android:textColor="@color/white"
+            android:text="  MODE BLIND"
+            android:textSize="24sp"
+            />
+
+        <!--layout for scoreboard list-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginLeft="50sp"
+            android:layout_marginRight="50sp"
+            android:background="@drawable/custom_scoreboard_body">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:background="@drawable/custom_scoreboard_header">
+
+                <!--The trophy image for the ranking column-->
+                <ImageView
+                    android:layout_width="50sp"
+                    android:layout_height="50sp"
+                    android:scaleType="centerInside"
+                    android:src="@mipmap/ic_scoreboard_foreground"/>
+
+                <!--Text NAME for username column-->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="NAME"
+                    android:fontFamily="@font/impact"
+                    android:textColor="@color/white"
+                    android:textSize="24sp"/>
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent" />
+
+                <!--Text TIME for the column showing the user's score-->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10sp"
+                    android:fontFamily="@font/impact"
+                    android:text="TIME"
+                    android:textColor="@color/white"
+                    android:textSize="24sp" />
+
+            </LinearLayout>
+
+            <!--layout for scoreboard data-->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/scoreboard_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="370sp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!--button bar-->
+    <GridLayout
+        android:id="@+id/GridLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="0sp"
+        android:background="@color/brown_100"
+        android:columnCount="3"
+        android:padding="0sp"
+        android:rowCount="1"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <!--scoreboard button-->
+        <ImageButton
+            android:id="@+id/scoreboard_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="fill"
+            android:background="@color/brown_200"
+            android:src="@mipmap/ic_scoreboard_foreground" />
+
+        <!--profile button-->
+        <ImageButton
+            android:id="@+id/profile_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="fill"
+            android:background="@color/brown_100"
+            android:src="@mipmap/ic_profile_foreground" />
+
+        <!--setting button-->
+        <ImageButton
+            android:id="@+id/setting_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="fill"
+            android:background="@color/brown_100"
+            android:src="@mipmap/ic_setting_foreground" />
+
+    </GridLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
